@@ -1,2 +1,1 @@
-# docker-templates
-镜像配置模板
+www.lxg2016.com    APPS XML发布地址
