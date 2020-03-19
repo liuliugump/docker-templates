@@ -1,0 +1,82 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>04-nacos</Name>
+  <Repository>nacos/nacos-server</Repository>
+  <Registry/>
+  <Network>bridge</Network>
+  <MyIP/>
+  <Shell>sh</Shell>
+  <Privileged>false</Privileged>
+  <Support/>
+  <Project/>
+  <Overview/>
+  <Category/>
+  <WebUI>http://[IP]:8848/nacos</WebUI>
+  <TemplateURL/>
+  <Icon/>
+  <ExtraParams/>
+  <PostArgs/>
+  <CPUset/>
+  <DateInstalled>1584533780</DateInstalled>
+  <DonateText/>
+  <DonateLink/>
+  <Description/>
+  <Networking>
+    <Mode>bridge</Mode>
+    <Publish>
+      <Port>
+        <HostPort>8848</HostPort>
+        <ContainerPort>8848</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+    </Publish>
+  </Networking>
+  <Data>
+    <Volume>
+      <HostDir>/mnt/user/etc/nacos/application.properties</HostDir>
+      <ContainerDir>/home/nacos/conf/application.properties</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+  </Data>
+  <Environment>
+    <Variable>
+      <Value>standalone</Value>
+      <Name>MODE</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>mysql</Value>
+      <Name>SPRING_DATASOURCE_PLATFORM</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>192.168.2.119</Value>
+      <Name>MYSQL_SERVICE_HOST</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>nacos</Value>
+      <Name>MYSQL_SERVICE_DB_NAME</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>xiot</Value>
+      <Name>MYSQL_SERVICE_USER</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>Xiot@mariadb_2018</Value>
+      <Name>MYSQL_SERVICE_PASSWORD</Name>
+      <Mode/>
+    </Variable>
+  </Environment>
+  <Labels/>
+  <Config Name="port" Target="8848" Default="" Mode="tcp" Description="Container Port: 8848" Type="Port" Display="always" Required="false" Mask="false">8848</Config>
+  <Config Name="MODE" Target="MODE" Default="" Mode="" Description="Container Variable: MODE" Type="Variable" Display="always" Required="false" Mask="false">standalone</Config>
+  <Config Name="SPRING_DATASOURCE_PLATFORM" Target="SPRING_DATASOURCE_PLATFORM" Default="" Mode="" Description="Container Variable: SPRING_DATASOURCE_PLATFORM" Type="Variable" Display="always" Required="false" Mask="false">mysql</Config>
+  <Config Name="MYSQL_SERVICE_HOST" Target="MYSQL_SERVICE_HOST" Default="" Mode="" Description="Container Variable: MYSQL_SERVICE_HOST" Type="Variable" Display="always" Required="false" Mask="false">192.168.2.119</Config>
+  <Config Name="MYSQL_SERVICE_DB_NAME" Target="MYSQL_SERVICE_DB_NAME" Default="" Mode="" Description="Container Variable: MYSQL_SERVICE_DB_NAME" Type="Variable" Display="always" Required="false" Mask="false">nacos</Config>
+  <Config Name="MYSQL_SERVICE_USER" Target="MYSQL_SERVICE_USER" Default="" Mode="" Description="Container Variable: MYSQL_SERVICE_USER" Type="Variable" Display="always" Required="false" Mask="false">xiot</Config>
+  <Config Name="MYSQL_SERVICE_PASSWORD" Target="MYSQL_SERVICE_PASSWORD" Default="" Mode="" Description="Container Variable: MYSQL_SERVICE_PASSWORD" Type="Variable" Display="always" Required="false" Mask="false">Xiot@mariadb_2018</Config>
+  <Config Name="application.properties" Target="/home/nacos/conf/application.properties" Default="" Mode="rw" Description="Container Path: /home/nacos/conf/application.properties" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/etc/nacos/application.properties</Config>
+</Container>

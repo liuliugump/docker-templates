@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>10-x-analysis-3-1.0</Name>
+  <Repository>registry.cn-shanghai.aliyuncs.com/moc_hanyunapp/moc_develop:x-analysis-1-1.0</Repository>
+  <Registry>registry.cn-shanghai.aliyuncs.com</Registry>
+  <Network>bridge</Network>
+  <MyIP/>
+  <Shell>sh</Shell>
+  <Privileged>false</Privileged>
+  <Support/>
+  <Project/>
+  <Overview/>
+  <Category/>
+  <WebUI/>
+  <TemplateURL/>
+  <Icon/>
+  <ExtraParams/>
+  <PostArgs/>
+  <CPUset/>
+  <DateInstalled>1584526649</DateInstalled>
+  <DonateText/>
+  <DonateLink/>
+  <Description/>
+  <Networking>
+    <Mode>bridge</Mode>
+    <Publish>
+      <Port>
+        <HostPort>8012</HostPort>
+        <ContainerPort>8012</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+    </Publish>
+  </Networking>
+  <Data>
+    <Volume>
+      <HostDir>/mnt/user/etc/x-server/x-analysis3/spring-nacos.xml</HostDir>
+      <ContainerDir>/opt/x-server/x-analysis/spring-nacos.xml</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+    <Volume>
+      <HostDir>/mnt/user/appdata/x-server/x-analysis/log/</HostDir>
+      <ContainerDir>/opt/x-server/x-analysis/log</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+  </Data>
+  <Environment/>
+  <Labels/>
+  <Config Name="nacos-xml" Target="/opt/x-server/x-analysis/spring-nacos.xml" Default="" Mode="rw" Description="Container Path: /opt/x-server/x-analysis/" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/etc/x-server/x-analysis3/spring-nacos.xml</Config>
+  <Config Name="port" Target="8012" Default="" Mode="tcp" Description="Container Port: 8012" Type="Port" Display="always" Required="false" Mask="false">8012</Config>
+  <Config Name="log" Target="/opt/x-server/x-analysis/log" Default="" Mode="rw" Description="Container Path: /opt/x-server/x-analysis/log" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/appdata/x-server/x-analysis/log/</Config>
+</Container>

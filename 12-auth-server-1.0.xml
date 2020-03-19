@@ -1,0 +1,82 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>12-auth-server-1.0</Name>
+  <Repository>registry.cn-shanghai.aliyuncs.com/moc_hanyunapp/moc_develop:auth-server-1.0</Repository>
+  <Registry>registry.cn-shanghai.aliyuncs.com</Registry>
+  <Network>bridge</Network>
+  <MyIP/>
+  <Shell>sh</Shell>
+  <Privileged>false</Privileged>
+  <Support/>
+  <Project/>
+  <Overview/>
+  <Category/>
+  <WebUI/>
+  <TemplateURL/>
+  <Icon/>
+  <ExtraParams/>
+  <PostArgs/>
+  <CPUset>0</CPUset>
+  <DateInstalled>1584530160</DateInstalled>
+  <DonateText/>
+  <DonateLink/>
+  <Description/>
+  <Networking>
+    <Mode>bridge</Mode>
+    <Publish>
+      <Port>
+        <HostPort>9004</HostPort>
+        <ContainerPort>9004</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+    </Publish>
+  </Networking>
+  <Data>
+    <Volume>
+      <HostDir>/mnt/user/appdata/iot</HostDir>
+      <ContainerDir>/opt/iot</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+  </Data>
+  <Environment>
+    <Variable>
+      <Value>1024m</Value>
+      <Name>JVM_XMS</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>2048m</Value>
+      <Name>JVM_XMX</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>-XX:MetaspaceSize=1024M</Value>
+      <Name>JVM_MS</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value> -XX:MaxMetaspaceSize=2048m</Value>
+      <Name>JVM_MMS</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>192.168.2.119:8848</Value>
+      <Name>spring.cloud.nacos.discovery.server-addr</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>192.168.2.119:8848</Value>
+      <Name>spring.cloud.nacos.config.server-addr</Name>
+      <Mode/>
+    </Variable>
+  </Environment>
+  <Labels/>
+  <Config Name="service-port" Target="9004" Default="" Mode="tcp" Description="Container Port: 9004" Type="Port" Display="always" Required="false" Mask="false">9004</Config>
+  <Config Name="JVM_XMS" Target="JVM_XMS" Default="" Mode="" Description="Container Variable: JVM_XMS" Type="Variable" Display="always" Required="false" Mask="false">1024m</Config>
+  <Config Name="JVM_XMX" Target="JVM_XMX" Default="" Mode="" Description="Container Variable: JVM_XMX" Type="Variable" Display="always" Required="false" Mask="false">2048m</Config>
+  <Config Name="JVM_MS" Target="JVM_MS" Default="" Mode="" Description="Container Variable: JVM_MS" Type="Variable" Display="always" Required="false" Mask="false">-XX:MetaspaceSize=1024M</Config>
+  <Config Name="JVM_MMS" Target="JVM_MMS" Default="" Mode="" Description="Container Variable: JVM_MMS" Type="Variable" Display="always" Required="false" Mask="false"> -XX:MaxMetaspaceSize=2048m</Config>
+  <Config Name="auth" Target="/opt/iot" Default="" Mode="rw" Description="Container Path: /opt/iot" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/appdata/iot</Config>
+  <Config Name="nacos.discovery" Target="spring.cloud.nacos.discovery.server-addr" Default="" Mode="" Description="Container Variable: spring.cloud.nacos.discovery.server-addr" Type="Variable" Display="always" Required="false" Mask="false">192.168.2.119:8848</Config>
+  <Config Name="nacos.config" Target="spring.cloud.nacos.config.server-addr" Default="" Mode="" Description="Container Variable: spring.cloud.nacos.config.server-addr" Type="Variable" Display="always" Required="false" Mask="false">192.168.2.119:8848</Config>
+</Container>

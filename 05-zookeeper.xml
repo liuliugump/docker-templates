@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>05-zookeeper</Name>
+  <Repository>zookeeper:3.5.6</Repository>
+  <Registry/>
+  <Network>bridge</Network>
+  <MyIP/>
+  <Shell>sh</Shell>
+  <Privileged>false</Privileged>
+  <Support/>
+  <Project/>
+  <Overview/>
+  <Category/>
+  <WebUI/>
+  <TemplateURL/>
+  <Icon/>
+  <ExtraParams/>
+  <PostArgs/>
+  <CPUset/>
+  <DateInstalled>1584598138</DateInstalled>
+  <DonateText/>
+  <DonateLink/>
+  <Description/>
+  <Networking>
+    <Mode>bridge</Mode>
+    <Publish>
+      <Port>
+        <HostPort>2181</HostPort>
+        <ContainerPort>2181</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+    </Publish>
+  </Networking>
+  <Data>
+    <Volume>
+      <HostDir>/mnt/user/appdata/zookeeper/data/</HostDir>
+      <ContainerDir>/data</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+    <Volume>
+      <HostDir>/mnt/user/appdata/zookeeper/datalog</HostDir>
+      <ContainerDir>/datalog</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+  </Data>
+  <Environment/>
+  <Labels/>
+  <Config Name="zookeeper.port" Target="2181" Default="" Mode="tcp" Description="Container Port: 2181" Type="Port" Display="always" Required="false" Mask="false">2181</Config>
+  <Config Name="zookeeper.data" Target="/data" Default="" Mode="rw" Description="Container Path: /data" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/appdata/zookeeper/data/</Config>
+  <Config Name="zookeper.datalog" Target="/datalog" Default="" Mode="rw" Description="Container Path: /datalog" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/appdata/zookeeper/datalog</Config>
+</Container>

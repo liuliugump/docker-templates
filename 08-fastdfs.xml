@@ -1,0 +1,70 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>08-fastdfs</Name>
+  <Repository>qbanxiaoli/fastdfs</Repository>
+  <Registry/>
+  <Network>host</Network>
+  <MyIP/>
+  <Shell>sh</Shell>
+  <Privileged>false</Privileged>
+  <Support/>
+  <Project/>
+  <Overview/>
+  <Category/>
+  <WebUI/>
+  <TemplateURL/>
+  <Icon/>
+  <ExtraParams/>
+  <PostArgs/>
+  <CPUset/>
+  <DateInstalled>1584601139</DateInstalled>
+  <DonateText/>
+  <DonateLink/>
+  <Description/>
+  <Networking>
+    <Mode>host</Mode>
+    <Publish>
+      <Port>
+        <HostPort>22122</HostPort>
+        <ContainerPort>22122</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+      <Port>
+        <HostPort>23000</HostPort>
+        <ContainerPort>23000</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+      <Port>
+        <HostPort>11411</HostPort>
+        <ContainerPort>11411</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+    </Publish>
+  </Networking>
+  <Data>
+    <Volume>
+      <HostDir>/mnt/user/appdata/fastdfs</HostDir>
+      <ContainerDir>/var/local/fdfs</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+    <Volume>
+      <HostDir>/mnt/user/etc/fdfs/nginx/nginx.conf</HostDir>
+      <ContainerDir>/usr/local/nginx/conf/nginx.conf</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+  </Data>
+  <Environment>
+    <Variable>
+      <Value>192.168.2.119</Value>
+      <Name>IP</Name>
+      <Mode/>
+    </Variable>
+  </Environment>
+  <Labels/>
+  <Config Name="IP" Target="IP" Default="" Mode="" Description="Container Variable: IP" Type="Variable" Display="always" Required="false" Mask="false">192.168.2.119</Config>
+  <Config Name="Host Path 1" Target="/var/local/fdfs" Default="" Mode="rw" Description="Container Path: /var/local/qbanxiaoli/fastdfs" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/appdata/fastdfs</Config>
+  <Config Name="Port1" Target="22122" Default="" Mode="tcp" Description="Container Port: 22122" Type="Port" Display="always" Required="false" Mask="false">22122</Config>
+  <Config Name="Port2" Target="23000" Default="" Mode="tcp" Description="Container Port: 23000" Type="Port" Display="always" Required="false" Mask="false">23000</Config>
+  <Config Name="Port3" Target="11411" Default="" Mode="tcp" Description="Container Port: 11411" Type="Port" Display="always" Required="false" Mask="false">11411</Config>
+  <Config Name="nginx.conf" Target="/usr/local/nginx/conf/nginx.conf" Default="" Mode="rw" Description="Container Path: /etc/fdfs/storage.conf" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/etc/fdfs/nginx/nginx.conf</Config>
+</Container>

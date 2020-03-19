@@ -1,0 +1,75 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>07-emqx</Name>
+  <Repository>emqx/emqx:v4.0.0</Repository>
+  <Registry/>
+  <Network>bridge</Network>
+  <MyIP/>
+  <Shell>sh</Shell>
+  <Privileged>false</Privileged>
+  <Support/>
+  <Project/>
+  <Overview/>
+  <Category/>
+  <WebUI>http://[IP]:18083</WebUI>
+  <TemplateURL/>
+  <Icon/>
+  <ExtraParams/>
+  <PostArgs/>
+  <CPUset/>
+  <DateInstalled>1584526208</DateInstalled>
+  <DonateText/>
+  <DonateLink/>
+  <Description/>
+  <Networking>
+    <Mode>bridge</Mode>
+    <Publish>
+      <Port>
+        <HostPort>1883</HostPort>
+        <ContainerPort>1883</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+      <Port>
+        <HostPort>8083</HostPort>
+        <ContainerPort>8083</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+      <Port>
+        <HostPort>8883</HostPort>
+        <ContainerPort>8883</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+      <Port>
+        <HostPort>8084</HostPort>
+        <ContainerPort>8084</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+      <Port>
+        <HostPort>18083</HostPort>
+        <ContainerPort>18083</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+    </Publish>
+  </Networking>
+  <Data>
+    <Volume>
+      <HostDir>/mnt/user/etc/emqx/emqx.conf</HostDir>
+      <ContainerDir>/opt/emqx/etc/emqx.conf</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+    <Volume>
+      <HostDir>/mnt/user/etc/emqx/emqx_auth_mysql.conf</HostDir>
+      <ContainerDir>/opt/emqx/etc/plugins/emqx_auth_mysql.conf</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+  </Data>
+  <Environment/>
+  <Labels/>
+  <Config Name="Port1" Target="1883" Default="" Mode="tcp" Description="Container Port: 1883" Type="Port" Display="always" Required="false" Mask="false">1883</Config>
+  <Config Name="Port2" Target="8083" Default="" Mode="tcp" Description="Container Port: 8083" Type="Port" Display="always" Required="false" Mask="false">8083</Config>
+  <Config Name="Port3" Target="8883" Default="" Mode="tcp" Description="Container Port: 8883" Type="Port" Display="always" Required="false" Mask="false">8883</Config>
+  <Config Name="Port4" Target="8084" Default="" Mode="tcp" Description="Container Port: 8084" Type="Port" Display="always" Required="false" Mask="false">8084</Config>
+  <Config Name="Port5" Target="18083" Default="" Mode="tcp" Description="Container Port: 18083" Type="Port" Display="always" Required="false" Mask="false">18083</Config>
+  <Config Name="emqx.conf" Target="/opt/emqx/etc/emqx.conf" Default="" Mode="rw" Description="Container Path: /opt/emqx/etc/emqx.conf" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/etc/emqx/emqx.conf</Config>
+  <Config Name="emqx_auth_mysql.conf" Target="/opt/emqx/etc/plugins/emqx_auth_mysql.conf" Default="" Mode="rw" Description="Container Path: /opt/emqx/etc/plugins/emqx_auth_mysql.conf" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/etc/emqx/emqx_auth_mysql.conf</Config>
+</Container>
